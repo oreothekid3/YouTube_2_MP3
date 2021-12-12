@@ -34,7 +34,7 @@ def Downloader():
     video.download()
     Label(main, text = 'DOWNLOADED', font = 'arial 15').place(x = 180, y = 210)
 
-Button(main, text = 'DOWNLOAD', font = 'arial 15 bold', bg = 'pale violet red', padx = 2, command = Downloader).place(x = 180, y = 160)
+Button(main, text = 'DOWNLOAD', font = 'arial 15 bold', bg = '#FF0000', padx = 2, command = Downloader).place(x = 180, y = 160)
 
 
 
