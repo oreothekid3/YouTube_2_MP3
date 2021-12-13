@@ -1,3 +1,9 @@
+####last thing i left off at was trying to convert downloaded audio file to mp3 extention 
+
+
+
+
+
 #framework to create a GUI
 from tkinter import *
 from tkinter import ttk
@@ -19,8 +25,6 @@ main.title('YouTube to MP3 Convertor')
 #pack() organizes text into a block
 Label(main, text = 'YouTube to MP3', font = 'arial 30 bold').pack()
 
-#Field for entering link
-
 #store the link as a string var
 link = StringVar()
 Label(main, text = 'Paste Link Here:', font = 'arial 20 bold').place(x = 150, y = 80)
@@ -28,13 +32,20 @@ link_enter = Entry(main, width = 53, textvariable = link).place(x = 85, y = 120)
 
 #Function for entering link
 
-def Downloader():
+def Video_Downloader():
     url = YouTube(str(link.get()))
     video = url.streams.first()
     video.download()
     Label(main, text = 'DOWNLOADED', font = 'arial 15').place(x = 180, y = 210)
 
-Button(main, text = 'DOWNLOAD', font = 'arial 15 bold', bg = '#FF0000', padx = 2, command = Downloader).place(x = 180, y = 160)
+def Audio_Downloader():
+    url = YouTube(str(link.get()))
+    audio = url.streams.filter(only_audio=True).first()
+    audio.download()
+    Label(main, text = 'AUDIO DOWNLOADED', font = 'arial 15').place(x = 180, y = 210)
+
+Button(main, text = 'VIDEO DOWNLOAD', font = 'arial 15 bold', bg = '#FF0000', padx = 2, command = Video_Downloader).place(x = 180, y = 160)
+Button(main, text = 'AUDIO DOWNLOAD', font = 'arial 15 bold', bg = '#FF0000', padx = 2, command = Audio_Downloader).place(x = 180, y = 200)
 
 
 
