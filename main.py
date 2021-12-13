@@ -1,4 +1,4 @@
-####last thing i left off at was trying to convert downloaded audio file to mp3 extention 
+####last thing i left off at was trying to get buttons to reset so I dont have to close application after every download.  
 
 
 import os
