@@ -1,4 +1,4 @@
-####last thing i left off at was trying to create a button that clears url from input field.  
+####last thing I left off on was the overall layout 
 
 
 import os
