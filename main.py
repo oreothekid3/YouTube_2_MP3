@@ -1,4 +1,4 @@
-####last thing i left off at was trying to get buttons to reset so I dont have to close application after every download.  
+####last thing i left off at was trying to create a button that clears url from input field.  
 
 
 import os
@@ -25,7 +25,8 @@ Label(main, text = 'YouTube to MP3', font = 'arial 30 bold').pack()
 #store the link as a string var
 link = StringVar()
 Label(main, text = 'Paste Link Here:', font = 'arial 20 bold').place(x = 150, y = 80)
-link_enter = Entry(main, width = 53, textvariable = link).place(x = 85, y = 120)
+link_enter = Entry(main, width = 53, textvariable = link)
+link_enter.place(x = 85, y = 120)
 
 #Function for entering link
 
@@ -44,8 +45,16 @@ def Audio_Downloader():
     os.rename(downloaded_audio, new_file)
     Label(main, text = 'AUDIO DOWNLOADED', font = 'arial 15', bg = '#FF0000').place(x = 180, y = 400)
 
+def clearURL():
+    link_enter.delete(0, END)
+
+
+#download vido file (mp4)
 Button(main, text = 'VIDEO DOWNLOAD', font = 'arial 15 bold', bg = '#FF0000', padx = 2, command = Video_Downloader).place(x = 180, y = 160)
+#Download audio file (mp3)
 Button(main, text = 'AUDIO DOWNLOAD', font = 'arial 15 bold', bg = '#FF0000', padx = 2, command = Audio_Downloader).place(x = 180, y = 200)
+#Clear entry field for new URL
+Button(main, text = 'Clear Input', font = 'arial 15 bold', bg = '#FF0000', padx = 2, command = clearURL).place(x = 180, y = 240)
 
 
 
