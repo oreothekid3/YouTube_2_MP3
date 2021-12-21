@@ -9,7 +9,6 @@ from tkinter import ttk
 from pytube import YouTube
 
 #Creating display window
-
 #initialize tkinter: creating display window
 main = Tk()
 #set window width and height
